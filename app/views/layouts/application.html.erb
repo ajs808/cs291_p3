@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slacker News</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="content-wrapper">
+      <div class="header">
+        <div class="header-nav">
+          <div class="header-left">
+            <strong class="site-title"><%= link_to "Slacker News", root_path %></strong>
+            <%= link_to "home", root_path %>
+            <% if @current_user %>
+              | <%= link_to "new post", new_post_path %>
+            <% end %>
+          </div>
+          
+          <div class="header-right">
+            <% if @current_user %>
+              <span class="username"><%= @current_user.username %></span> |
+              <%= button_to "logout", logout_path, method: :delete, class: "button" %>
+            <% else %>
+              <%= link_to "login", login_path %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

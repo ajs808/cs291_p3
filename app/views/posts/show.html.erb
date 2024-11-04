@@ -1,0 +1,53 @@
+<div class="post-detail">
+  <h2 class="post-title"><%= @post.title %></h2>
+  <p class="post-meta">
+    by <%= @post.user.username %> 
+    <%= time_ago_in_words(@post.updated_at) %> ago
+    <% if @current_user && @post.user_id == @current_user.id %>
+      | <%= link_to "edit", edit_post_path(@post) %> | 
+      <%= link_to "delete", post_path(@post), 
+          data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this post?' },
+          class: "delete-link" %>
+    <% end %>
+  </p>
+  
+  <div class="post-body">
+    <%= simple_format @post.body %>
+  </div>
+</div>
+
+<div class="comments-section">
+  <% if @current_user %>
+    <%= form_with(model: [@post, @comment || Comment.new], local: true, class: "comment-form") do |f| %>
+      <% if @comment&.errors&.any? %>
+        <div class="error-messages">
+          <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+          <ul>
+            <% @comment.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.text_area :body %>
+      </div>
+      <%= f.submit "add comment", class: "button" %>
+    <% end %>
+  <% else %>
+    <p class="post-meta"><%= link_to "Login", login_path %> to add a comment.</p>
+  <% end %>
+  <br/>
+  <div class="comments">
+    <% @post.comments.order(created_at: :desc).each do |comment| %>
+      <div class="comment">
+        <p class="comment-meta">
+          <%= comment.user.username %> 
+          <%= time_ago_in_words(comment.created_at) %> ago
+        </p>
+        <p class="comment-body"><%= simple_format comment.body %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

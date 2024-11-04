@@ -1,0 +1,276 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  margin: 0;
+  padding: 8px;
+  background-color: #ffffff;
+}
+
+.content-wrapper {
+  width: 85%;
+  margin: 0 auto;
+  background-color: #f6f6ef;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #ff6600;
+  padding: 5px 20px;
+  margin-bottom: 0;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.site-title {
+  color: #000;
+  margin-right: 5px;
+}
+
+.header-nav a, .header-nav .button {
+  color: #000;
+  text-decoration: none;
+}
+
+.header-nav .button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  display: inline;
+}
+
+.username {
+  color: #828282;
+}
+
+.logout-form {
+  display: inline;
+}
+
+.button {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.main-content {
+  padding: 10px;
+}
+
+.post {
+  padding: 3px 0;
+  margin-bottom: 3px;
+  border-bottom: none;
+}
+
+.post h2 {
+  display: inline;
+  font-size: 10pt;
+  font-weight: normal;
+  margin: 0;
+}
+
+.post h2 a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.post h2 a:visited {
+  color: #828282;
+}
+
+.post-meta {
+  color: #828282;
+  font-size: 8pt;
+  margin: 2px 0;
+}
+
+.post-meta a {
+  color: #828282;
+  text-decoration: none;
+}
+
+.button, input[type="submit"] {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  text-decoration: none;
+  color: #000000;
+  background: #f6f6ef;
+  border: 1px solid #828282;
+  padding: 2px 4px;
+  margin: 0 5px;
+}
+
+.comments-section {
+  margin-top: 10px;
+  max-width: 800px;
+}
+
+.comment {
+  margin: 5px 0;
+  padding: 0;
+  border-bottom: none;
+  font-size: 9pt;
+}
+
+.comment-meta {
+  color: #828282;
+  font-size: 8pt;
+  margin-bottom: 4px;
+}
+
+.comment-form textarea {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 9pt;
+  width: 100%;
+  max-width: 800px;
+  padding: 5px;
+}
+
+.post-body {
+  font-size: 9pt;
+  max-width: 800px;
+  line-height: 1.4;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.field input[type="text"] {
+  width: 100%;
+  max-width: 600px;
+  padding: 5px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+}
+
+.field textarea {
+  width: 100%;
+  max-width: 664px;
+  height: 130px;
+  padding: 5px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+}
+
+.error-messages {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #fff8f8;
+  border: 1px solid #ff6b6b;
+  border-radius: 4px;
+}
+
+.error-messages h2 {
+  color: #dc3545;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+}
+
+.error-messages ul {
+  color: #dc3545;
+  font-size: 11px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.error-messages li {
+  margin: 3px 0;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.actions input[type="submit"] {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #ff7711;
+}
+
+.delete-link {
+  color: #828282;
+  text-decoration: none;
+}
+
+.delete-link:hover {
+  text-decoration: underline;
+  color: #ff6600;
+}
+
+.user-info {
+  float: right;
+}
+
+.post h2, .post-detail h2 {
+  display: inline;
+  font-size: 10pt;
+  font-weight: normal;
+  margin: 0;
+  color: #000000;
+}
+
+.post h2 a:visited {
+  color: #828282;
+}
+
+.post-body {
+  margin-top: 10px;
+  font-size: 9pt;
+  line-height: 1.4;
+}
